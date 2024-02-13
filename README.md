@@ -148,3 +148,114 @@ to exit `ctrl + x `
 ```
 apt remove nano
 ```
+
+## `Linux File System`
+
+In Linux just like windows our files and directories are organized in a Tree. In a Hierarchical Structure.
+
+So, In windows we have a structure like this:-
+```
+• C:\
+    • Program Files
+    • Windows
+```
+
+In Linux, We have the root directory on top  of the Hierarchy, below that we have bunch of standard directories.
+
+```
+• /
+    • bin    • root
+    • boot   • lib
+    • dev    • var
+    • etc    • var
+    • home
+```
+
+In Linux everything is a file!
+Including devices, directories, Network socket, pipes and so on..
+
+## `Navigating the file system`
+```
+pwd       # to print the working directory
+```
+```
+ls        # to list the files and directories
+```
+```
+ls -l     # to print a long list 
+```
+
+```
+cd /      # to go to the root directory
+```
+```
+cd bin    # to go to the bin directory
+```
+```
+cd ..     # to go one level up
+```
+
+### `Absolute and Relative Path`
+A path is a way of specifying the location of a file or a folder in a file system. A path consists of a sequence of directories and filenames, separated by slashes (/).
+
+An `absolute path` is a path that starts from the `root directory (/)` and describes every step you must take to reach the target file or folder. An absolute path is the same regardless of your current location in the file system.
+
+For example, `/home/user/documents/report.txt` is an absolute path that tells you to start from the `root directory (/)`, then go to the home directory, then the user directory, then the documents directory, and finally the `report.txt` file.
+
+A `relative path` is a path that starts from your `current directory` and describes the steps you must take to reach the target file or folder. A relative path depends on your current location in the file system and may change if you move to a different directory.
+
+For example, `documents/report.txt` is a relative path that tells you to go to the documents directory and then the `report.txt` file, assuming that you are already in the user directory.
+
+To write a relative path, you can use two special symbols:
+
+`. (a single dot)` represents the current directory.
+For example, `./report.txt` is equivalent to `report.txt`.
+
+`.. (two dots)` represents the parent directory.
+For example, `../pictures/photo.jpg` tells you to go up one level and then to the pictures directory and the `photo.jpg` file.
+
+You can use the pwd command to print your current directory, and the realpath command to print the absolute path of a file or folder1.
+
+Here is a simple example of using absolute and relative paths in Linux:
+```Linux
+# Suppose you are in the /home/user directory
+$ pwd
+/home/user
+
+# To access the report.txt file, you can use either the absolute path
+$ cat /home/user/documents/report.txt
+This is a report.
+
+# Or the relative path
+$ cat documents/report.txt
+This is a report.
+
+# To access the photo.jpg file, you can use either the absolute path
+$ display /home/user/pictures/photo.jpg
+# This will open the image in a viewer
+
+# Or the relative path
+$ display ../pictures/photo.jpg
+# This will also open the image in a viewer
+
+```
+
+## `Manipulating files and directories`
+```
+mkdir test              # to create the test directory
+```
+```
+mv test docker          # to rename a directory 
+```
+```
+touch file.txt          # to create file.txt
+```
+```
+mv file.txt hello.txt   # to rename a file 
+```
+```
+rm hello.txt            # to remove a file 
+```
+```
+rm -r docker            # to recursively remove a directory
+```
