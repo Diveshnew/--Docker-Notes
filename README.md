@@ -82,37 +82,37 @@ Now, go to the teminal and you should open the terminal in Your folder like `~/D
 ### `Terminal`
 
 ```
-docker run ubuntu
+docker run ubuntu             # pull this image and then start a container
 ```
 ```
-docker ps
+docker ps                     # list of running processes or running containers
 ```
 ```
-docker ps -a
+docker ps -a                  # stopped containers as well
 ```
 ```
-docker run -it ubuntu
+docker run -it ubuntu         # to start a container and interact with it.
 ```
-Now, A shell Prompt will come. A shell is a program that takes our commands and passes them to the Operating sustem for execution.
+Now, A shell Prompt will come. A shell is a program that takes our commands and passes them to the Operating system for execution.
 looks like this:-
 ```
 root@2f759e6886e3:/#
 ```
 You can run these programs in this shell prompt:
 ```
-echo hello
+echo hello              # will print hello on the terminal
 ```
 ```
-whoami
+whoami                  # this will show the current user
 ```
 ```
-echo $0
+echo $0                 # location of this shell program
 ```
 ```
-history
+history                 # all the commands we have executed lately
 ```
 ```
-!2
+!2                      # by using exclamation mark (!) we can execute the previous command
 ```
 
 ## Package Managers
@@ -127,26 +127,26 @@ NuGet
 Here in Ubuntu we also have a package manager called `apt`. Which is short for advanced package tool.
 
 ```
-apt
+apt                         # Can see the most used commands
 ```
 ```
-apt list
+apt list                    # See all the packages in this database
 ```
 ```
-apt update
+apt update                  # to update the package database
 ```
 ```
-apt install nano
+apt install nano            # This will install nano
 ```
 Nano is installed!
 
 ```
-nano
+nano                        # To run nano
 ```
 to exit `ctrl + x `
 
 ```
-apt remove nano
+apt remove nano             # To Remove nano form the database
 ```
 
 ## `Linux File System`
@@ -258,4 +258,78 @@ rm hello.txt            # to remove a file
 ```
 ```
 rm -r docker            # to recursively remove a directory
+```
+
+## `Editing and Viewing Files`
+```
+nano file.txt                   # to edit file.txt
+```
+```
+cat file.txt                    # to view file.txt
+```
+```
+more /etc/adduser.conf          # to view page by page
+```
+```
+less file.txt                   # to view with scrolling capabilities
+apt install less                # if don't have less command install it
+```
+```
+head file.txt                   # to view the first 10 lines
+```
+```
+head -n 5 file.txt              # to view the first 5 lines 
+```
+```
+tail file.txt                   # to view the last 10 lines 
+```
+```
+tail -n 5 file.txt              # to view the last 5 lines
+```
+
+## `Redirection`
+Concept of standard input and output, Standard Input represents the keyboard and Standard output represents the screen. But we can always change the source of input and output this is called `Redirection`.
+```
+cat file1.txt > file2.txt                      # cat will read the content from the first file and write to the second file
+```
+```
+cat file1.txt file2.txt                        # cat will read data from both the files and print it in the terminal
+```
+```
+cat file1.txt file2.txt > combined.txt         # will combine both the files in one
+```
+```
+echo hello > hello.txt                         # hello.txt which now contains "hello"
+```
+```
+ls -l /etc > files.txt                         # long listening of all the files in a file
+```
+
+## `Searching for text`
+grep: global regular expression print
+```
+grep hello file.txt                      # to search for hello in file.txt
+```
+```
+grep -i hello file.txt                   # case-insensitive search 
+```
+```
+grep -i hello file*.txt                  # to search in files with a pattern
+```
+```
+grep -i -r hello .                       # to search in the current directory
+```
+
+## `Finding files and directories`
+```
+find                                    # to list all files and directories
+```
+```
+find -type d                            # to list directories only
+```
+```
+find -type f                            # to list files only
+```
+```
+find -name “f*”                         # to filter by name using a pattern
 ```
