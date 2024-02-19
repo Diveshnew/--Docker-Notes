@@ -333,3 +333,35 @@ find -type f                            # to list files only
 ```
 find -name “f*”                         # to filter by name using a pattern
 ```
+```
+find -type f -name "f*"                 # find all the files whose name start with f
+```
+```
+find -type f -iname "F*"                # find all the files whose name start with f, i makes it case insensitive
+```
+```
+find / -type f -name "*.py" > python-files.txt
+```
+
+
+## `Chaining Commands`
+```
+mkdir test ; cd test ; echo done               # execute all the commands in one go
+```
+```
+mkdir test && cd test && echo done             # if one commands fail, other commands will not get executed
+```
+```
+mkdir test || echo "directory exists"          # if first executes, second will not execute and vice versa
+```
+```
+ls /bin | less                                 # what comes out of first command, goes into second command
+```
+```
+ls /bin | head -n 5
+```
+```
+mkdir hello;\
+cd hello;\
+echo done                                      # Breaking a long command into different lines
+```
