@@ -365,3 +365,66 @@ mkdir hello;\
 cd hello;\
 echo done                                      # Breaking a long command into different lines
 ```
+
+## `Managing environment variables`
+Just like we have variables in our programming languages. In linux, We have environment variables Which we can set for storing configuration settings for our applications. So, our applications can read configuration settings from these envirnoment variables.
+
+```
+printenv                                       # to list all variables and their value
+```
+```
+printenv PATH                                  # to view the value of PATH
+```
+```
+echo $PATH                                     # to view the value of PATH
+```
+```
+export name=bob                                # to set a variable in the current session
+```
+
+To start the previously closed container
+```
+docker ps                         # to see all the docker processes or container
+```
+```
+docker ps -a                      # to see all the containers including stopped container
+```
+```
+docker start -i 2f7               # to start the container again: "2f7" first few letters of container id
+```
+
+## `Managing processes`
+A Process is an instance of a running program.
+
+```
+ps                                 # to list the running processes
+```
+```
+kill 37                            # to kill the process with ID 37
+```
+
+## `Managing users and groups`
+```
+useradd -m john                    # to create a user with a home directory
+```
+```
+adduser john                       # to add a user interactively
+```
+```
+usermod                            # to modify a user
+```
+```
+userdel                            # to delete a user
+```
+```
+groupadd devs                      # to create a group 
+```
+```
+groups john                        # to view the groups for john
+```
+```
+groupmod                           # to modify a group
+```
+```
+groupdel                           # to delete a group
+```
