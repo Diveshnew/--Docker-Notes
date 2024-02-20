@@ -405,26 +405,57 @@ kill 37                            # to kill the process with ID 37
 
 ## `Managing users and groups`
 ```
-useradd -m john                    # to create a user with a home directory
+useradd -m john                              # to create a user with a home directory
 ```
 ```
-adduser john                       # to add a user interactively
+cat /etc/passwd                              # we can look at the user
 ```
 ```
-usermod                            # to modify a user
+usermod -s /bin/bash john                    # to modify
 ```
 ```
-userdel                            # to delete a user
+cat /etc/shadow                              # only root user can access it
 ```
 ```
-groupadd devs                      # to create a group 
+docker exec -it -u john 2f759e6886e9 bash    # login as john, not as a root user
 ```
 ```
-groups john                        # to view the groups for john
+adduser john                                 # to add a user interactively
 ```
 ```
-groupmod                           # to modify a group
+usermod                                      # to modify a user
 ```
 ```
-groupdel                           # to delete a group
+userdel                                      # to delete a user
+```
+```
+groupadd devs                                # to create a group 
+```
+```
+groups john                                  # to view the groups for john
+```
+```
+groupmod                                     # to modify a group
+```
+```
+groupdel                                     # to delete a group
+```
+
+## `File permissions`
+```
+chmod u+x deploy.sh                      # give the owning user execute permission
+```
+```
+chmod g+x deploy.sh                      # give the owning group execute permission
+```
+```
+chmod o+x deploy.sh                      # give everyone else execute permission
+```
+```
+chmod ug+x deploy.sh                     # to give the owning user and group
+                                         # execute permission
+```
+```
+chmod ug-x deploy.sh                     # to remove the execute permission from 
+                                         # the owning user and group 
 ```
